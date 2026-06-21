@@ -1,7 +1,55 @@
 # Keychain-tris
 
-## PCB
+i made this project as a speedrun before the end of fallout for funsies. it is (hopefully) tetris on a keychain! how it will work is that you will be able to play tetris on the oled screen by moving the pcb around, and the imu will detect the movements. so for example, moving right will move the pieces right, and moving it down will drop it. whats great about this control method is that theres 6 axis of motion so theres plenty to work with.
 
+the pcb has:
+- an esp32c3
+- a type c port for power/programming
+- a lipo board
+- 3v3 ldo
+- and of course the imu which is an mpu 6050
+
+## Poster (Zine)
+![poster](assets/POSTER.png)
+
+## PCB Render
+![render](assets/RENDER.png)
+
+## PCB
 ![pcb](assets/PCB.png)
 
+## Schematic
 ![schematic](assets/schematic.png)
+
+## Assembly:
+- solder on components according to pcb layout
+- plug in to usb and upload firmware
+- play tetris!
+
+## BOM
+
+|Reference                 |Value                      |Footprint                                                 |Datasheet                                                                                                 |Qty|DNP|Exclude from BOM|Exclude from Board|
+|--------------------------|---------------------------|----------------------------------------------------------|----------------------------------------------------------------------------------------------------------|---|---|----------------|------------------|
+|AE1                       |2450AT18A100E              |easyeda2kicad:ANT-SMD_L3.2-W1.6                           |https://lcsc.com/product-detail/RF-Antenna_JOHANSON_2450AT18A100E_2450AT18A100E_C89334.html               |1  |   |                |                  |
+|C1,C2,C5,C8,C9,C10,C15,C17|100nF                      |Capacitor_SMD:C_0805_2012Metric                           |~                                                                                                         |8  |   |                |                  |
+|C3,C4                     |10uF                       |Capacitor_SMD:C_0805_2012Metric                           |~                                                                                                         |2  |   |                |                  |
+|C6,C7,C13,C16             |1uF                        |Capacitor_SMD:C_0805_2012Metric                           |~                                                                                                         |4  |   |                |                  |
+|C11,C12                   |18pF                       |Capacitor_SMD:C_0805_2012Metric                           |~                                                                                                         |2  |   |                |                  |
+|C14                       |1pF                        |Capacitor_SMD:C_0805_2012Metric                           |~                                                                                                         |1  |   |                |                  |
+|C18                       |2.2uF                      |Capacitor_SMD:C_0805_2012Metric                           |~                                                                                                         |1  |   |                |                  |
+|J1                        |Conn_01x02                 |Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical|~                                                                                                         |1  |   |                |                  |
+|J2                        |USB_C_Receptacle_USB2.0_16P|Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12         |https://www.usb.org/sites/default/files/documents/usb_type-c.zip                                          |1  |   |                |                  |
+|J3                        |Conn_01x04                 |Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical|~                                                                                                         |1  |   |                |                  |
+|J4,J5                     |Conn_01x08                 |Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical|~                                                                                                         |2  |   |                |                  |
+|L1                        |BLM18KG601SN1D             |easyeda2kicad:L0603                                       |https://lcsc.com/product-detail/Ferrite-Beads-And-Chips_muRata_BLM18KG601SN1D_600R-25-at100MHz_C85833.html|1  |   |                |                  |
+|L2                        |SDCL1005C2N7STDF           |easyeda2kicad:L0402                                       |https://lcsc.com/product-detail/HF-Inductors_2-7nH-0-3nH_C27123.html                                      |1  |   |                |                  |
+|L3                        |SDCL1608C3N9STDF           |easyeda2kicad:L0603                                       |https://lcsc.com/product-detail/HF-Inductors_3-9nH-0-3nH_C13818.html                                      |1  |   |                |                  |
+|R1,R2                     |5.1K                       |Resistor_SMD:R_0805_2012Metric                            |~                                                                                                         |2  |   |                |                  |
+|R3,R4,R5                  |10K                        |Resistor_SMD:R_0805_2012Metric                            |~                                                                                                         |3  |   |                |                  |
+|R6                        |50                         |Resistor_SMD:R_0805_2012Metric                            |~                                                                                                         |1  |   |                |                  |
+|SW1,SW2                   |TS24CA                     |easyeda2kicad:SW-SMD_2P-TS24CA                            |https://lcsc.com/product-detail/Tactile-Switches_SHOU-HAN-TS24CA_C393942.html                             |2  |   |                |                  |
+|TP1                       |TestPoint                  |TestPoint:TestPoint_Pad_D1.0mm                            |~                                                                                                         |1  |   |                |                  |
+|U1                        |ESP32-C3                   |Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.7x3.7mm       |https://www.espressif.com/sites/default/files/documentation/esp32-c3_datasheet_en.pdf                     |1  |   |                |                  |
+|U2                        |AMS1117-3.3                |Package_TO_SOT_SMD:SOT-223-3_TabPin2                      |http://www.advanced-monolithic.com/pdf/ds1117.pdf                                                         |1  |   |                |                  |
+|U3                        |MPU-6050_C24112            |easyeda2kicad:QFN-24_L4.0-W4.0-P0.50-BL-EP2.7             |https://lcsc.com/product-detail/Sensors_InvenSense_MPU6050_MPU-6050_C24112.html                           |1  |   |                |                  |
+|X1                        |3225 40M 12PF 10PPM        |easyeda2kicad:CRYSTAL-SMD_4P-L3.2-W2.5-BL                 |https://www.lcsc.com/datasheet/C5380316.pdf                                                               |1  |   |                |                  |
