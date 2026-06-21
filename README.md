@@ -19,7 +19,7 @@ the pcb has:
 ![pcb](assets/PCB.png)
 
 ## Schematic
-![schematic](assets/schematic.png)
+![schematic](assets/SCHEMATIC.png)
 
 ## Assembly:
 - solder on components according to pcb layout
