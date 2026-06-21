@@ -7786,7 +7786,7 @@
 		(uuid "d05bf017-56d6-498e-bcc2-66910be0415b")
 		(at 91.9025 63.90005 90)
 		(property "Reference" "SW2"
-			(at 0 -4.975 90)
+			(at 0.10005 2.5975 90)
 			(layer "F.SilkS")
 			(uuid "7e8a7b59-ae6f-4146-aeff-d63f8d1350a1")
 			(effects
@@ -9263,7 +9263,7 @@
 		(uuid "f147ce05-b558-47a4-ab1e-02b31048dba0")
 		(at 91.9025 69.900049 90)
 		(property "Reference" "SW1"
-			(at 0 -4.975 90)
+			(at 0.10005 2.5975 90)
 			(layer "F.SilkS")
 			(uuid "5d6faf21-aba2-4a46-a02d-101da0483ff4")
 			(effects
