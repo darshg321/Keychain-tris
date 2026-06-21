@@ -1,0 +1,8 @@
+C393942 (button)
+C5380316 (40 MHz crystal)
+C74305 (24nh inductor)
+C89334 (antenna)
+C85833 (ferrite bead)
+C13818 (3.9nh)
+C27123 (2.7nh)
+C24112 (imu)
